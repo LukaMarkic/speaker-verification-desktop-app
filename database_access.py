@@ -59,17 +59,20 @@ def get_govornik_by_id(user_id):
         connection.close()
 
 def insert_govornik(ime, prezime):
+    new_id = None
     try:
         connection = MySQLdb.connect(**db_config)
         cursor = connection.cursor()
         cursor.execute("INSERT INTO govornici (ime, prezime) VALUES (%s, %s)", (ime, prezime))
         connection.commit()
+        new_id = cursor.lastrowid
     except Exception as e:
         print(f"Error inserting govornik: {str(e)}")
         connection.rollback()
     finally:
         cursor.close()
         connection.close()
+        return new_id
 
 def update_govornik(user_id, ime, prezime):
     try:
@@ -123,3 +126,4 @@ def get_last_inserted_user_id():
     finally:
         cursor.close()
         connection.close()
+
