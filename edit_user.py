@@ -1,3 +1,4 @@
+import os
 from PyQt5.QtWidgets import (
     QWidget, QPushButton, QVBoxLayout, QHBoxLayout, QSizePolicy, QLineEdit,
     QComboBox, QFormLayout, QListWidget, QListWidgetItem, QLabel, QMessageBox,
@@ -230,6 +231,8 @@ def add_user_to_database(self):
 
     user_id = insert_govornik(ime, prezime)
     spectrogram_file_path = f"./User_Spectrograms/User_Spectrogram_{user_id}.npy"
+    if not os.path.exists("User_Spectrograms"):
+        os.makedirs("User_Spectrograms")
     np.save(spectrogram_file_path, spectrogram)
 
     update_govornik_spektrogram(user_id, spectrogram_file_path)
