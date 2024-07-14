@@ -1,3 +1,4 @@
+import os
 import MySQLdb
 import MySQLdb.cursors
 
@@ -91,6 +92,17 @@ def delete_govornik(user_id):
     try:
         connection = MySQLdb.connect(**db_config)
         cursor = connection.cursor()
+
+        # Fetch spectrogram_url attribute for the user
+        cursor.execute("SELECT spektrogram_url FROM govornici WHERE id = %s", (user_id,))
+        result = cursor.fetchone()
+        if result:
+            spektrogram_url = result[0]
+            if spektrogram_url:
+                # Delete spectrogram file if it exists
+                if os.path.exists(spektrogram_url):
+                    os.remove(spektrogram_url)
+
         cursor.execute("DELETE FROM govornici WHERE id = %s", (user_id,))
         connection.commit()
     except Exception as e:
