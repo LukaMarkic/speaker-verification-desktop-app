@@ -9,7 +9,7 @@ def preprocess_audio(audio_data, sr=16000, target_duration=2.52, recordingMode=T
         y = audio_data[:, 0]
     else:
         y = audio_data
-    vad_segments = librosa.effects.split(y, top_db=18)
+    vad_segments = librosa.effects.split(y, top_db=20)
     if len(vad_segments) == 0:
         return None
     word_boundaries = []
