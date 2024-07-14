@@ -201,12 +201,6 @@ def confirm_add_user(self):
 
     reply = QMessageBox.question(self, 'Potvrda', 'Jese sigurni da želite dodati novog korisnika?',
                                  QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
-    
-    yes_button = reply.button(QMessageBox.Yes)
-    yes_button.setText('Da')
-
-    no_button = reply.button(QMessageBox.No)
-    no_button.setText('Ne')
 
     if reply == QMessageBox.Yes:
         self.add_user_to_database()
@@ -250,12 +244,6 @@ def close_add_user_form(self):
 def delete_user(self, user_id):
     reply = QMessageBox.question(self, 'Potvrda', 'Jeste li sigurni da želite izbrisati ovog korisnika?',
                                  QMessageBox.Yes | QMessageBox.No, QMessageBox.No)
-    
-    yes_button = reply.button(QMessageBox.Yes)
-    yes_button.setText('Da')
-
-    no_button = reply.button(QMessageBox.No)
-    no_button.setText('Ne')
 
     if reply == QMessageBox.Yes:
         delete_govornik(user_id)
