@@ -14,18 +14,18 @@ from PyQt5.QtCore import Qt, QTimer
 from PyQt5.QtGui import QPixmap, QFont
 
 start_models = {
-    "Model s kombiniranim podacima": "./../basic_combined_latest_siamese_model_e-62_f.h5",
-    "Model s kombiniranim podacima i primijenjenim Gausovim šumom": "./../combined_gaussian_latest_siamese_model_e-15_f.h5",
-    "Model s kombiniranim podacima i primijenjenom amplitudnom augmentacijom": "./../combined_amplitude_latest_siamese_model_e-26_f.h5", 
-    "Model s razdvojenim podacima": "./../separated_basic_latest_siamese_model_e-68_f.h5",
-    "Model s razdvojenim podacima i primijenjenim Gausovim šumom": "./../separated_gaussian_latest_siamese_model_e-34_f.h5",
-    "Model s razdvojenim podacima i primijenjenom amplitudnom augmentacijom": "./../separated_amplitude_latest_siamese_model_e-34_f.h5",
-    "Model s dodadnim skupom i izvornim modlom s kombiniranim podacima i primijenjenim Gusovim šumom": "./../additional_basic_combined_gaussian_latest_siamese_model_e-13_f.h5",
+    "Model s kombiniranim podacima": "./Models/basic_combined_latest_siamese_model_e-62_f.h5",
+    "Model s kombiniranim podacima i primijenjenim Gausovim šumom": "./Models/combined_gaussian_latest_siamese_model_e-15_f.h5",
+    "Model s kombiniranim podacima i primijenjenom amplitudnom augmentacijom": "./Models/combined_amplitude_latest_siamese_model_e-26_f.h5", 
+    "Model s razdvojenim podacima": "./Models/separated_basic_latest_siamese_model_e-68_f.h5",
+    "Model s razdvojenim podacima i primijenjenim Gausovim šumom": "./Models/separated_gaussian_latest_siamese_model_e-34_f.h5",
+    "Model s razdvojenim podacima i primijenjenom amplitudnom augmentacijom": "./Models/separated_amplitude_latest_siamese_model_e-34_f.h5",
+    "Model s dodadnim skupom i izvornim modlom s kombiniranim podacima i primijenjenim Gusovim šumom": "./Models/additional_basic_combined_gaussian_latest_siamese_model_e-13_f.h5",
     "Model na koji je primijenjen Gausov šum, s dodadnim skupom i izvornim modlom s kombiniranim podacima i primijenjenim Gusovim šumom": "./Models/additional_gaussian_combined_gaussian_latest_siamese_model_e-38_f.h5",
     "Model na koji je primijenjena amplitudna augmentacija, s dodadnim skupom i izvornim modlom s kombiniranim podacima i primijenjenim Gusovim šumom": "./Models/additional_amplitude_combined_gaussian_latest_siamese_model_e-70_f.h5",
-    "Model s dodadnim skupom i izvornim modlom s razdvojenim podacima": "./../additional_basic_separated_latest_siamese_model_e-18_f.h5",
-    "Model na koji je primijenjen Gausov šum, s dodadnim skupom i izvornim modlom s razdvojenim podacima": "./../additional_gaussian_separated_basic_latest_siamese_model_e-26_f.h5",
-    "Model na koji je primijenjena amplitudna augmentacija, s dodadnim skupom i izvornim modlom s razdvojenim podacima": "./../additional_amplitude_separated_basic_latest_siamese_model_e-20_f.h5"
+    "Model s dodadnim skupom i izvornim modlom s razdvojenim podacima": "./Models/additional_basic_separated_latest_siamese_model_e-18_f.h5",
+    "Model na koji je primijenjen Gausov šum, s dodadnim skupom i izvornim modlom s razdvojenim podacima": "./Models/additional_gaussian_separated_basic_latest_siamese_model_e-26_f.h5",
+    "Model na koji je primijenjena amplitudna augmentacija, s dodadnim skupom i izvornim modlom s razdvojenim podacima": "./Models/additional_amplitude_separated_basic_latest_siamese_model_e-20_f.h5"
 }
 
 default_model = "Model s dodadnim skupom i izvornim modlom s razdvojenim podacima"
