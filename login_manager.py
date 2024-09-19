@@ -14,21 +14,21 @@ from PyQt5.QtCore import Qt, QTimer
 from PyQt5.QtGui import QPixmap, QFont
 
 start_models = {
-    "Model s kombiniranim podacima": "./Models/basic_combined_latest_siamese_model_e-62_f.h5",
-    "Model s kombiniranim podacima i primijenjenim Gausovim šumom": "./Models/combined_gaussian_latest_siamese_model_e-15_f.h5",
-    "Model s kombiniranim podacima i primijenjenom amplitudnom augmentacijom": "./Models/combined_amplitude_latest_siamese_model_e-26_f.h5", 
-    "Model s razdvojenim podacima": "./Models/separated_basic_latest_siamese_model_e-68_f.h5",
-    "Model s razdvojenim podacima i primijenjenim Gausovim šumom": "./Models/separated_gaussian_latest_siamese_model_e-34_f.h5",
-    "Model s razdvojenim podacima i primijenjenom amplitudnom augmentacijom": "./Models/separated_amplitude_latest_siamese_model_e-34_f.h5",
-    "Model s dodadnim skupom i izvornim modlom s kombiniranim podacima i primijenjenim Gusovim šumom": "./Models/additional_basic_combined_gaussian_latest_siamese_model_e-13_f.h5",
-    "Model na koji je primijenjen Gausov šum, s dodadnim skupom i izvornim modlom s kombiniranim podacima i primijenjenim Gusovim šumom": "./Models/additional_gaussian_combined_gaussian_latest_siamese_model_e-38_f.h5",
-    "Model na koji je primijenjena amplitudna augmentacija, s dodadnim skupom i izvornim modlom s kombiniranim podacima i primijenjenim Gusovim šumom": "./Models/additional_amplitude_combined_gaussian_latest_siamese_model_e-70_f.h5",
-    "Model s dodadnim skupom i izvornim modlom s razdvojenim podacima": "./Models/additional_basic_separated_latest_siamese_model_e-18_f.h5",
-    "Model na koji je primijenjen Gausov šum, s dodadnim skupom i izvornim modlom s razdvojenim podacima": "./Models/additional_gaussian_separated_basic_latest_siamese_model_e-26_f.h5",
-    "Model na koji je primijenjena amplitudna augmentacija, s dodadnim skupom i izvornim modlom s razdvojenim podacima": "./Models/additional_amplitude_separated_basic_latest_siamese_model_e-20_f.h5"
+    "Mreža trenirana na kombiniranim podacima": "./Models/basic_combined_latest_siamese_model_e-62_f.h5",
+    "Mreža trenirana na kombiniranim podacima (Gaussov šum)": "./Models/combined_gaussian_latest_siamese_model_e-15_f.h5",
+    "Mreža trenirana na kombiniranim podacima (Amplitudna augmentacija spektrograma)": "./Models/combined_amplitude_latest_siamese_model_e-26_f.h5", 
+    "Mreža trenirana na razdvojenim podacima (Bez augmentacije)": "./Models/separated_basic_latest_siamese_model_e-68_f.h5",
+    "Mreža trenirana na razdvojenim podacima (Gaussov šum)": "./Models/separated_gaussian_latest_siamese_model_e-34_f.h5",
+    "Mreža trenirana na razdvojenim podacima (Amplitudna augmentacija spektrograma)": "./Models/separated_amplitude_latest_siamese_model_e-34_f.h5",
+    "Mreža dobivena prijenosnim učenjem ne temelju izvorne mreže trenirane na kombiniranim podacima (Bez augmentacije)": "./Models/transfer_combined_basic_116_f.h5",
+    "Mreža dobivena prijenosnim učenjem ne temelju izvorne mreže trenirane na kombiniranim podacima (Gussov šum)": "./Models/additional_basic_combined_gaussian_latest_siamese_model_e-13_f.h5",
+    "Mreža dobivena prijenosnim učenjem ne temelju izvorne mreže trenirane na kombiniranim podacima (Amplitudna augmentacija spektrograma)": "./Models/transfer_combined_amplitude_30_f.h5",
+    "Mreža dobivena prijenosnim učenjem ne temelju izvorne mreže trenirane na razdvojenim podacima (Bez augmentacije)": "./Models/additional_basic_separated_latest_siamese_model_e-18_f.h5",
+    "Mreža dobivena prijenosnim učenjem ne temelju izvorne mreže trenirane na razdvojenim podacima (Gaussov šum)": "./Models/transfer_separated_gaussian_42_f.h5",
+    "Mreža dobivena prijenosnim učenjem ne temelju izvorne mreže trenirane na razdvojenim podacima (Amplirudna augmentacija spektrograma)": "./Models/transfer_separated_amplitude_86_f.h5"
 }
 
-default_model = "Model s dodadnim skupom i izvornim modlom s razdvojenim podacima"
+default_model = "Mreža dobivena prijenosnim učenjem ne temelju izvorne mreže trenirane na razdvojenim podacima (Bez augmentacije)"
 model = None
 
 def load_selected_model(model_path):
@@ -71,7 +71,7 @@ def create_login_page(app_instance):
     app_instance.model_selection_layout = QVBoxLayout()
     app_instance.model_selection_widget.setLayout(app_instance.model_selection_layout)
 
-    app_instance.model_label = QLabel('Odaberi model')
+    app_instance.model_label = QLabel('Odaberite istreniranu mrežu')
     app_instance.model_selection_layout.addWidget(app_instance.model_label)
 
     app_instance.model_combobox = QComboBox()
@@ -88,7 +88,7 @@ def create_login_page(app_instance):
     left_layout.addWidget(app_instance.model_selection_widget)
     left_layout.addStretch(1)
 
-    back_button = QPushButton('Nazad')
+    back_button = QPushButton('Vrati se na početnu stranicu')
     back_button.setStyleSheet("padding: 10px;")
     back_button.clicked.connect(app_instance.show_main_menu)
     left_layout.addWidget(back_button)
@@ -287,7 +287,7 @@ def compare_with_database(app_instance, spectrogram, threshold=0.6):
         if score > highest_score:
             highest_score = score
             best_match = user
-
+    print(highest_score)
     if highest_score > threshold:
         app_instance.result_title.setText("PROFIL KORISNIKA")
         app_instance.result_label.setText(f"<b>Dobrodošli {best_match['ime']} {best_match['prezime']}</b><br>S {highest_score*100:.2f}% sigurnošću možemo reći da se radi o Vašem indetitetu.")

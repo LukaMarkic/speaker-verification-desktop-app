@@ -36,7 +36,7 @@ def create_edit_user_page(self):
 
     edit_left_layout.addStretch(1)
 
-    back_button = QPushButton('Nazad')
+    back_button = QPushButton('Vrati se na početnu stranicu')
     back_button.setStyleSheet("padding: 10px;")
     back_button.clicked.connect(self.show_main_menu)
     edit_left_layout.addWidget(back_button)
@@ -73,7 +73,7 @@ def create_add_new_user_form(self):
         add_user_form_layout.setAlignment(Qt.AlignCenter)
         self.add_user_form_widget.setLayout(add_user_form_layout)
 
-        self.add_user_title_label = QLabel('DODAVANJE GOVORNIKA', self)
+        self.add_user_title_label = QLabel('DODAVANJE KORISNIKA', self)
         self.add_user_title_label.setStyleSheet("font-size: 24px; font-weight: bold; margin-bottom: 20px;")
         add_user_form_layout.addWidget(self.add_user_title_label)
 

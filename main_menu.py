@@ -90,7 +90,7 @@ class AudioRecorder(QMainWindow):
         layout = QVBoxLayout()
         layout.setAlignment(Qt.AlignCenter)
         
-        app_title_label = QLabel('VERIFIKACIJA KORISNIKA', self)
+        app_title_label = QLabel('VERIFIKACIJA GOVORNIKA', self)
         app_title_label.setStyleSheet("font-size: 32px; font-weight: bold; margin-top: 20px;")
         layout.addWidget(app_title_label)
         layout.addStretch(1)
