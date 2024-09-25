@@ -20,15 +20,15 @@ start_models = {
     "Mreža trenirana na razdvojenim podacima (Bez augmentacije)": "./Models/separated_basic_latest_siamese_model_e-68_f.h5",
     "Mreža trenirana na razdvojenim podacima (Gaussov šum)": "./Models/separated_gaussian_latest_siamese_model_e-34_f.h5",
     "Mreža trenirana na razdvojenim podacima (Amplitudna augmentacija spektrograma)": "./Models/separated_amplitude_latest_siamese_model_e-34_f.h5",
-    "Mreža dobivena prijenosnim učenjem ne temelju izvorne mreže trenirane na kombiniranim podacima (Bez augmentacije)": "./Models/transfer_combined_basic_116_f.h5",
-    "Mreža dobivena prijenosnim učenjem ne temelju izvorne mreže trenirane na kombiniranim podacima (Gussov šum)": "./Models/additional_basic_combined_gaussian_latest_siamese_model_e-13_f.h5",
-    "Mreža dobivena prijenosnim učenjem ne temelju izvorne mreže trenirane na kombiniranim podacima (Amplitudna augmentacija spektrograma)": "./Models/transfer_combined_amplitude_30_f.h5",
-    "Mreža dobivena prijenosnim učenjem ne temelju izvorne mreže trenirane na razdvojenim podacima (Bez augmentacije)": "./Models/additional_basic_separated_latest_siamese_model_e-18_f.h5",
-    "Mreža dobivena prijenosnim učenjem ne temelju izvorne mreže trenirane na razdvojenim podacima (Gaussov šum)": "./Models/transfer_separated_gaussian_42_f.h5",
-    "Mreža dobivena prijenosnim učenjem ne temelju izvorne mreže trenirane na razdvojenim podacima (Amplirudna augmentacija spektrograma)": "./Models/transfer_separated_amplitude_86_f.h5"
+    "Mreža dobivena prijenosnim učenjem na temelju izvorne mreže trenirane na kombiniranim podacima (Bez augmentacije)": "./Models/transfer_combined_basic_116_f.h5",
+    "Mreža dobivena prijenosnim učenjem na temelju izvorne mreže trenirane na kombiniranim podacima (Gussov šum)": "./Models/additional_basic_combined_gaussian_latest_siamese_model_e-13_f.h5",
+    "Mreža dobivena prijenosnim učenjem na temelju izvorne mreže trenirane na kombiniranim podacima (Amplitudna augmentacija spektrograma)": "./Models/transfer_combined_amplitude_30_f.h5",
+    "Mreža dobivena prijenosnim učenjem na temelju izvorne mreže trenirane na razdvojenim podacima (Bez augmentacije)": "./Models/additional_basic_separated_latest_siamese_model_e-18_f.h5",
+    "Mreža dobivena prijenosnim učenjem na temelju izvorne mreže trenirane na razdvojenim podacima (Gaussov šum)": "./Models/transfer_separated_gaussian_42_f.h5",
+    "Mreža dobivena prijenosnim učenjem na temelju izvorne mreže trenirane na razdvojenim podacima (Amplirudna augmentacija spektrograma)": "./Models/transfer_separated_amplitude_86_f.h5"
 }
 
-default_model = "Mreža dobivena prijenosnim učenjem ne temelju izvorne mreže trenirane na razdvojenim podacima (Bez augmentacije)"
+default_model = "Mreža dobivena prijenosnim učenjem na temelju izvorne mreže trenirane na razdvojenim podacima (Bez augmentacije)"
 model = None
 
 def load_selected_model(model_path):
